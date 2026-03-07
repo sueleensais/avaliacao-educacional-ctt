@@ -1,15 +1,16 @@
 # Avaliação Educacional de Questões com Classical Test Theory (CTT)
 
-## Descrição
-Projeto de iniciativa própria desenvolvido em Python, com o objetivo de aplicar técnicas da Classical Test Theory (Teoria Clássica dos Testes) para avaliar a qualidade de questões de uma avaliação educacional. A análise busca identificar questões fáceis ou difíceis, verificar sua capacidade de discriminar entre alunos de diferentes níveis de desempenho e propor interpretações automáticas para apoiar decisões pedagógicas. Utilizei uma base de dados fictícia contendo 10 alunos e 100 questões.
+## Objetivo
+Projeto autoral em Python, utilizando NumPy, Pandas e Matplotlib, para aplicar técnicas da Classical Test Theory (CTT) na avaliação da qualidade de questões educacionais. A análise identifica itens fáceis ou difíceis, verifica sua capacidade de discriminar entre alunos de diferentes níveis de desempenho e gera interpretações automáticas para apoiar decisões pedagógicas.  
+Base fictícia: 10 alunos e 100 questões.
 
 ## Pipeline
-1. Importação de bibliotecas
-2. Carregamento dos dados
-3. Cálculo da dificuldade das questões
-4. Cálculo da discriminação das questões
-5. Construção da tabela final
-6. Visualização dos resultados
+1. Importação de bibliotecas  
+2. Carregamento da base de dados  
+3. Cálculo da dificuldade (média de acertos por questão)  
+4. Cálculo da discriminação (diferença entre grupos de alto e baixo desempenho)  
+5. Interpretação automática (Boa, Fraca, Revisar)  
+6. Visualização dos resultados (tabelas e gráficos)
 
 ## 1. Importação de bibliotecas
 ```python
@@ -24,7 +25,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("dados-simulados.csv")
 print(df.head())
 ```
-## 3. Cálculo da dificuldade das questões
+## 3. Cálculo da dificuldade (média de acertos por questão) 
 ```python
 # calculando a dificuldade 
 dificuldade = df.mean()
@@ -47,7 +48,7 @@ print(dificuldade)
 - valor próximo a 1.0: questão fácil
 - valor próximo a 0.0: questão difícil
   
-## 4. Cálculo da discriminação das questões
+## Cálculo da discriminação (diferença entre grupos de alto e baixo desempenho)
 ```python
 # calculando pontuação total de cada aluno
 df["total"] = df.sum(axis=1)
@@ -109,14 +110,12 @@ print(resultado)
 | Q9      | 0.677419    | 0.28          |
 
 **Interpretação:**
-- Coluna dificuldade: demonstra se a questão é fácil (valor alto) ou difícil (valor baixo)
-- Coluna discriminação: demonstra se a questão diferencia bem os alunos (valor positivo e alto)
 - Questões com alta dificuldade e baixa discriminação podem ser muito fáceis e pouco úteis. 
 - Questões com baixa dificuldade e boa discriminação são boas para avaliações.
 - Questões com discriminação negativas devem ser revisadas.
 
 ## 6. Visualização dos resultados
-**Gráfico Dificuldade e Discriminação das Questões**
+- **Gráfico "Dificuldade e Discriminação das Questões"**
 ```python
 # criando gráfico
 ax = resultado.plot(kind="bar", figsize=(10,6))
@@ -129,7 +128,7 @@ plt.show()
 ```
 ![Descrição da Imagem](image/grafico.png)
 
-**Tabela Final com Interpretação**
+- **Tabela Final com três indicadores principais: Dificuldade, Discriminação e Interpretação**
 
 ```python
 # criando coluna de interpretação das questões
@@ -164,17 +163,10 @@ print(resultado)
 | Q9      | 0.677419    | 0.28          | Fraca         |
 
  
-## Resultados e Interpretações
-A análise produziu uma tabela final com três indicadores principais:
-
-- **Dificuldade** → indica se a questão é fácil (valor alto) ou difícil (valor baixo).  
-- **Discriminação** → mostra se a questão diferencia bem os alunos de maior e menor desempenho.  
-- **Interpretação** → classificação automática baseada nos valores de discriminação.
-
-### Classificações
-- **Boas** → apresentam alta discriminação, contribuem para diferenciar alunos e devem ser mantidas na avaliação.  
-- **Fracas** → possuem discriminação baixa, podem ser utilizadas com cautela ou ajustadas para maior efetividade.  
-- **Revisar** → apresentam discriminação negativa, indicando inconsistência; devem ser reformuladas ou descartadas.  
+**Interpretação:**
+- Dificuldade: indica se a questão é fácil (valor alto) ou difícil (valor baixo).  
+- Discriminação: mostra se a questão diferencia bem os alunos de maior e menor desempenho.  
+- Interpretação: classificação automática baseada nos valores de discriminação.
 
 ### Conclusão
-Este projeto mostra como a Classical Test Theory (CTT) pode ser usada para avaliar a qualidade de questões em avaliações educacionais. A análise de dificuldade e discriminação, junto com uma interpretação automática, fornece um diagnóstico objetivo de cada questão, sendo possível apoiar decisões pedagógicas e melhorar a precisão na avaliação do desempenho dos alunos.
+Este projeto mostra como a CTT pode ser usada para avaliar a qualidade de questões em avaliações educacionais. A análise de dificuldade e discriminação, junto com uma interpretação automática, fornece um diagnóstico objetivo de cada questão, sendo possível apoiar decisões pedagógicas e melhorar a precisão na avaliação do desempenho dos alunos.
