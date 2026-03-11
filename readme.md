@@ -66,7 +66,7 @@ print(dificuldade)
 - valor próximo a 1.0: questão fácil
 - valor próximo a 0.0: questão difícil
   
-### Cálculo da discriminação (diferença entre grupos de alto e baixo desempenho)
+### 4. Cálculo da discriminação (diferença entre grupos de alto e baixo desempenho)
 ```python
 # calculando pontuação total de cada aluno
 df["total"] = df.sum(axis=1)
@@ -193,6 +193,7 @@ Este projeto mostra como a CTT pode ser usada para avaliar a qualidade de quest�
 
 ---
 *Projeto desenvolvido de forma autoral para praticar manipulação de dados e estatística básica com Python.*
+
 
 
 
