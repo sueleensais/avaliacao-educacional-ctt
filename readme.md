@@ -130,7 +130,7 @@ print(resultado)
 | Q9      | 0.677419    | 0.28          |
 
 **Interpretação:**
-- Questões com alta dificuldade e baixa discriminação podem ser muito fáceis e pouco úteis. 
+- Questões com alta dificuldade e baixa discriminação podem ser muito fáceis e pouco úteis para avliações. 
 - Questões com baixa dificuldade e boa discriminação são boas para avaliações.
 - Questões com discriminação negativas devem ser revisadas.
 
@@ -193,6 +193,7 @@ Este projeto mostra como a CTT pode ser usada para avaliar a qualidade de quest�
 
 ---
 *Projeto desenvolvido de forma autoral para praticar manipulação de dados e estatística básica com Python.*
+
 
 
 
