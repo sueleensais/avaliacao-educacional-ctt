@@ -1,4 +1,4 @@
-# Avaliação Educacional de Questões com Classical Test Theory (CTT)
+# Avaliação Psicométrica de Questões Educacionais com Classical Test Theory (CTT)
 
 ## Objetivo
 Projeto autoral em Python, utilizando NumPy, Pandas e Matplotlib, para aplicar técnicas da Classical Test Theory (CTT) na avaliação da qualidade de questões educacionais. A análise identifica itens fáceis ou difíceis, verifica sua capacidade de discriminar entre alunos de diferentes níveis de desempenho e gera interpretações automáticas para apoiar decisões pedagógicas.  
@@ -170,3 +170,4 @@ print(resultado)
 
 ### Conclusão
 Este projeto mostra como a CTT pode ser usada para avaliar a qualidade de questões em avaliações educacionais. A análise de dificuldade e discriminação, junto com uma interpretação automática, fornece um diagnóstico objetivo de cada questão, sendo possível apoiar decisões pedagógicas e melhorar a precisão na avaliação do desempenho dos alunos.
+
