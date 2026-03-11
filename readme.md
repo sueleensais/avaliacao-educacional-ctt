@@ -1,8 +1,7 @@
 # Avaliação Psicométrica de Questões Educacionais com Classical Test Theory (CTT)
 
-## Objetivo
-Projeto autoral em Python, utilizando NumPy, Pandas e Matplotlib, para aplicar técnicas da Classical Test Theory (CTT) na avaliação da qualidade de questões educacionais. A análise identifica itens fáceis ou difíceis, verifica sua capacidade de discriminar entre alunos de diferentes níveis de desempenho e gera interpretações automáticas para apoiar decisões pedagógicas.  
-Base fictícia: 10 alunos e 100 questões.
+## Descrição 
+Através de técnicas estatísticas da Teoria Clássica dos Testes (TCT), o código transforma uma lista bruta de acertos e erros de uma prova em um diagnóstico técnico. O projeto visa identificar quais questões são realmente eficazes para medir o conhecimento e quais possuem falhas (como ambiguidade ou erro de gabarito), permitindo que instituições de ensino melhorem a qualidade de seus bancos de questões com base em dados, e não apenas na intuição.
 
 ## Pipeline
 1. Importação de bibliotecas  
@@ -12,20 +11,34 @@ Base fictícia: 10 alunos e 100 questões.
 5. Interpretação automática (Boa, Fraca, Revisar)  
 6. Visualização dos resultados (tabelas e gráficos)
 
-## 1. Importação de bibliotecas
+## Objetivos Técnicos
+* Análise de Acertos: Calcular a porcentagem de alunos que acertaram cada questão.
+* Comparação de Grupos: Separar os 27% melhores alunos e os 27% com menores notas para comparar como eles responderam a cada pergunta.
+* Classificação Automática: Criar um "semáforo" que diz se a questão está Boa, Fraca ou se precisa Revisar.
+* Gráficos Simples: Criar barras visuais para mostrar onde estão os problemas de forma rápida.
+
+## Tecnologias Utilizadas
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+
+## Desenvolvimento da Solução
+
+### 1. Importação de bibliotecas
 ```python
 # importando bibliotecas
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 ```
-## 2. Carregamento dos dados
+### 2. Carregamento dos dados
 ```python
 # carregando os dados
 df = pd.read_csv("dados-simulados.csv")
 print(df.head())
 ```
-## 3. Cálculo da dificuldade (média de acertos por questão) 
+### 3. Cálculo da dificuldade (média de acertos por questão) 
 ```python
 # calculando a dificuldade 
 dificuldade = df.mean()
@@ -48,7 +61,7 @@ print(dificuldade)
 - valor próximo a 1.0: questão fácil
 - valor próximo a 0.0: questão difícil
   
-## Cálculo da discriminação (diferença entre grupos de alto e baixo desempenho)
+### Cálculo da discriminação (diferença entre grupos de alto e baixo desempenho)
 ```python
 # calculando pontuação total de cada aluno
 df["total"] = df.sum(axis=1)
@@ -84,7 +97,7 @@ print(discriminacao)
 - valores próximos de 0: discriminação fraca
 - valores negativos: indica problema (os alunos fracos acertaram mais do que os alunos fortes)
 
-## 5. Construção da tabela final
+### 5. Construção da tabela final
 ```python
 # juntando resultados: dificuldade e discriminação
 resultado = pd.DataFrame({
@@ -114,7 +127,7 @@ print(resultado)
 - Questões com baixa dificuldade e boa discriminação são boas para avaliações.
 - Questões com discriminação negativas devem ser revisadas.
 
-## 6. Visualização dos resultados
+### 6. Visualização dos resultados
 - **Gráfico "Dificuldade e Discriminação das Questões"**
 ```python
 # criando gráfico
@@ -168,6 +181,8 @@ print(resultado)
 - Discriminação: mostra se a questão diferencia bem os alunos de maior e menor desempenho.  
 - Interpretação: classificação automática baseada nos valores de discriminação.
 
-### Conclusão
+## Conclusão
 Este projeto mostra como a CTT pode ser usada para avaliar a qualidade de questões em avaliações educacionais. A análise de dificuldade e discriminação, junto com uma interpretação automática, fornece um diagnóstico objetivo de cada questão, sendo possível apoiar decisões pedagógicas e melhorar a precisão na avaliação do desempenho dos alunos.
 
+---
+*Projeto desenvolvido de forma autoral para praticar manipulação de dados e estatística básica com Python.*
