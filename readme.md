@@ -3,7 +3,7 @@
 ## Descrição 
 Através de técnicas estatísticas da Classical Test Theory (CTT), o código transforma uma lista bruta de acertos e erros de uma prova em um diagnóstico técnico. O projeto visa identificar quais questões são realmente eficazes para medir o conhecimento e quais possuem falhas por meio de dois indicadores principais para cada pergunta:
 
-* Dificuldade: Classifica se o item é fácil ou difícil com base na proporção de acertos.
+* Dificuldade: Classifica se a questão é fácil ou difícil com base na proporção de acertos.
 * Discriminação: Avalia se a questão consegue separar os alunos que dominam o conteúdo daqueles que não estudaram ou possuem lacunas de conhecimento.
 
 Essa solução permite que instituições de ensino melhorem a qualidade de seus bancos de questões com base em dados, substituindo a intuição por evidências estatísticas.
@@ -191,5 +191,6 @@ Este projeto mostra como a CTT pode ser usada para avaliar a qualidade de quest�
 
 ---
 *Projeto desenvolvido de forma autoral para praticar manipulação de dados e estatística básica com Python.*
+
 
 
