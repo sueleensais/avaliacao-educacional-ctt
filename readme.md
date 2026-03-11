@@ -6,7 +6,7 @@ Através de técnicas estatísticas da Classical Test Theory (CTT), o código tr
 * Dificuldade: Classifica se a questão é fácil ou difícil com base na proporção de acertos.
 * Discriminação: Avalia se a questão consegue separar os alunos que dominam o conteúdo daqueles que não estudaram ou possuem lacunas de conhecimento.
 
-Essa solução permite que instituições de ensino melhorem a qualidade de seus bancos de questões com base em dados, substituindo a intuição por evidências estatísticas.
+O projeto utiliza uma base de dados fictícia composta por 100 alunos e 10 questões, onde as respostas são binárias (0 para erro e 1 para acerto). Essa solução permite que instituições de ensino melhorem a qualidade de seus bancos de questões com base em dados, substituindo a intuição por evidências estatísticas.
 
 ## Pipeline
 1. Importação de bibliotecas  
@@ -78,6 +78,8 @@ df_sorted = df.sort_values("total")
 n = int(len(df) * 0.27)
 grupo_inferior = df_sorted.iloc[:n]
 grupo_superior = df_sorted.iloc[-n:]
+
+# kelley's rule: na literatura estatística, o corte de 27% é o ponto ideal para maximizar a variância e a confiabilidade na discriminação de itens em grupos extremos.
 
 # calculando a discriminação de cada questão
 discriminacao = grupo_superior.mean() - grupo_inferior.mean()
@@ -191,6 +193,7 @@ Este projeto mostra como a CTT pode ser usada para avaliar a qualidade de quest�
 
 ---
 *Projeto desenvolvido de forma autoral para praticar manipulação de dados e estatística básica com Python.*
+
 
 
 
