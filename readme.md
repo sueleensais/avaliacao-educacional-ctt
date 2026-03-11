@@ -1,7 +1,7 @@
 # Avaliação Psicométrica de Questões Educacionais com Classical Test Theory (CTT)
 
 ## Descrição 
-Através de técnicas estatísticas da Teoria Clássica dos Testes (TCT), o código transforma uma lista bruta de acertos e erros de uma prova em um diagnóstico técnico. O projeto visa identificar quais questões são realmente eficazes para medir o conhecimento e quais possuem falhas (como ambiguidade ou erro de gabarito), permitindo que instituições de ensino melhorem a qualidade de seus bancos de questões com base em dados, e não apenas na intuição.
+Através de técnicas estatísticas da Classical Test Theory (CTT), o código transforma uma lista bruta de acertos e erros de uma prova em um diagnóstico técnico. O projeto visa identificar quais questões são realmente eficazes para medir o conhecimento e quais possuem falhas (como ambiguidade ou erro de gabarito), permitindo que instituições de ensino melhorem a qualidade de seus bancos de questões com base em dados, e não apenas na intuição.
 
 ## Pipeline
 1. Importação de bibliotecas  
@@ -186,3 +186,4 @@ Este projeto mostra como a CTT pode ser usada para avaliar a qualidade de quest�
 
 ---
 *Projeto desenvolvido de forma autoral para praticar manipulação de dados e estatística básica com Python.*
+
